@@ -79,68 +79,26 @@ Then download this lua script: [all-classes-learn-hunter-pet-spells.lua](https:/
 | Line number | 1207 |
 | --- | --- |
 | Before | <pre><code class="language-cpp">if (result && !(playerFlags & PLAYER_FLAGS_GHOST) && (plrClass == CLASS_WARLOCK &#124;&#124; true &#124;&#124; (plrClass == CLASS_DEATH_KNIGHT && (fields[21].Get<uint32>()&PLAYER_EXTRA_SHOW_DK_PET))))</code></pre> |
-| After | if (result && !(playerFlags & PLAYER_FLAGS_GHOST) && (plrClass == CLASS_WARLOCK || true || (plrClass == CLASS_DEATH_KNIGHT && (fields[21].Get<uint32>()&PLAYER_EXTRA_SHOW_DK_PET)))) |
+| After | <pre><code class="language-cpp">if (result && !(playerFlags & PLAYER_FLAGS_GHOST) && (plrClass == CLASS_WARLOCK || plrClass == CLASS_HUNTER || (plrClass == CLASS_DEATH_KNIGHT && (fields[21].Get<uint32>()&PLAYER_EXTRA_SHOW_DK_PET))))</code></pre> |
+| Description | With this change you will be able to see your character's pet on the character selection screen, no matter your character's class. |
 
-| Line number | Before | After |
-| ---------------------- | ---------------------- | ---------------------- |
-| 1207 | test2 | asd |
-| 1207 | test2 | asd |
-| 1207 | test2 | asd |
-| 1207 | test2 | asd |
+| Line number | 14250 |
+| --- | --- |
+| Before | <pre><code class="language-cpp">if (IsClass(CLASS_HUNTER, CLASS_CONTEXT_PET))</code></pre> |
+| After | <pre><code class="language-cpp">if (true)</code></pre> |
+| Description |  |
 
-    // show pet at selection character in character list only for non-ghost character
-    if (result && !(playerFlags & PLAYER_FLAGS_GHOST) && (plrClass == CLASS_WARLOCK || plrClass == CLASS_HUNTER || (plrClass == CLASS_DEATH_KNIGHT && (fields[21].Get<uint32>()&PLAYER_EXTRA_SHOW_DK_PET))))
-    {
+| Line number | 2140 ? |
+| --- | --- |
+| Before | <pre><code class="language-cpp"></code></pre> |
+| After | <pre><code class="language-cpp"></code></pre> |
+| Description |  |
 
-With this change you will be able to see your character's pet on the character selection screen, no matter your character's class.
-
-
-**Line 13668 ?**
-
-| Before               | After               |
-| ---------------------- | ---------------------- |
-| test1 | test2 |
-
-
-                LOG_ERROR("entities.player", "Player {} (GUID: {}), has skill ({}) that is invalid for the race/class combination (Race: {}, Class: {}). Will be deleted.",
-                    GetName(), GetGUID().GetCounter(), skill, getRace(), getClass());
-
-                // Mark skill for deletion in the database
-                mSkillStatus.insert(SkillStatusMap::value_type(skill, SkillStatusData(0, SKILL_DELETED)));
-                continue;
-            }
-
-
-**Line 14250**
-
-| Before               | After               |
-| ---------------------- | ---------------------- |
-| test1 | test2 |
-
-
-    if (IsClass(CLASS_HUNTER, CLASS_CONTEXT_PET))
-    {
-        return true;
-    }
-
-
-**Line 2140 ?**
-
-| Before               | After               |
-| ---------------------- | ---------------------- |
-| test1 | test2 |
-
-    if (npcflagmask & (UNIT_NPC_FLAG_TRAINER | UNIT_NPC_FLAG_TRAINER_CLASS) && creature->GetCreatureTemplate()->trainer_type == TRAINER_TYPE_CLASS && !IsClass((Classes)creature->GetCreatureTemplate()->trainer_class, CLASS_CONTEXT_CLASS_TRAINER))
-        return nullptr;
-
-
-**Line 14725**
-
-| Before               | After               |
-| ---------------------- | ---------------------- |
-| test1 | test2 |
-
-    stmt->SetData(index++, 4);
+| Line number | 14725 ? |
+| --- | --- |
+| Before | <pre><code class="language-cpp"></code></pre> |
+| After | <pre><code class="language-cpp"></code></pre> |
+| Description |  |
 
 
 **/src/server/game/Entities/Player/PlayerGossip.cpp**
