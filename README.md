@@ -142,8 +142,8 @@ Then download this lua script: [all-classes-learn-hunter-pet-spells.lua](https:/
 
 | Line number | 3103 |
 | --- | --- |
-| Before | <pre><code class="language-cpp">if (!m_caster->IsClass(CLASS_HUNTER, CLASS_CONTEXT_PET))        <br />return;</code></pre> |
-| After | <pre><code class="language-cpp">//if (!m_caster->IsClass(CLASS_HUNTER, CLASS_CONTEXT_PET))        //return;</code></pre> |
+| Before | <pre><code class="language-cpp">if (!m_caster->IsClass(CLASS_HUNTER, CLASS_CONTEXT_PET))&#13;        return;</code></pre> |
+| After | <pre><code class="language-cpp">//if (!m_caster->IsClass(CLASS_HUNTER, CLASS_CONTEXT_PET))&#13;        //return;</code></pre> |
 | Description | Allows all classes to tame beasts. |
 
 
