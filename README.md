@@ -30,7 +30,7 @@ The mod requires modifications on your Azerothcore server, and if you want to be
 
 ## **1 - Giving characters pet-related spells:**
 
-No matter the mechanism you choose to teach characters the hunter pet skills, you need to have this line on your worldserver.conf:
+Azerothcore checks if characters have spells that don't correspond to their class and deletes them, in order to avoid this you must have the following line on your ``worldserver.conf``:
 
 ``ValidateSkillLearnedBySpells = 0``
 
