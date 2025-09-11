@@ -201,6 +201,34 @@ bool WorldSession::CheckStableMaster(ObjectGuid guid)
 
 ## **1 - Edit the wow.exe binary in your client directory using a disassembler/decompiler:**
 
+You can either use my tool to edit your binary:
+
+Download X and patch your wow.exe with the ``All Classes Hunter Pet UI`` option.
+
+Or you can edit your binary yourself:
+
+001D3010:   0F  90
+001D3011:    84  90
+001D3012:   BC  90
+001D3013:   00  90
+001D3014:   00  90
+001D3015:   00  90
+001D3016:   8B  90
+001D3017:   CE  90
+001D3018:   E8  90
+001D3019:   13   90
+001D301A:   7A  90
+001D301B:   14  90
+001D301C:   00  90
+001D301D:   84  90
+001D301E:   C0  90
+001D301F:   0F  90
+001D3020:  84  90
+001D3021:   AD  90
+001D3022:  00  90
+001D3023:  00  90
+001D3024:  00  90
+
 GetPetPersonalityRow
 NOP 17 bytes starting from 0x0071F3BF
 
