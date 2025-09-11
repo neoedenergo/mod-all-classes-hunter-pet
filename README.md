@@ -1,3 +1,5 @@
+![Alt text](https://forgejo.neoeden.org/ergo/mod-all-classes-hunter-pet/raw/branch/main/Untitled.png)
+
 ## Hunter pets for all classes in Azerothcore.
 
 This is a mod that requires changes in both Azerothcore and the WOTLK 3.3.5a client (Editing of the wow.exe binary with a disassembler/decompiler)
