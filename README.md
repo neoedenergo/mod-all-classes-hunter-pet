@@ -46,7 +46,7 @@ There are multiple ways you can give the characters in your server the ability t
 
 **On character creation:**
 
-Run this SQL query on your acore_characters database:
+Run this SQL query on your acore_world database:
 
 ```
 INSERT INTO playercreateinfo_spell_custom (racemask, classmask, Spell, Note) VALUES
