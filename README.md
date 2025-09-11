@@ -23,7 +23,9 @@ Thanks to [SatyPardus](https://github.com/SatyPardus) for the reverse engineerin
 
 ### If you just want to download the files, overwrite your non-modded files, and play:
 
-[Download Files]() (WIP)
+[Download ]() (WIP)
+
+[Download wow.exe]() (WIP)
 
 ### If you want to do the modifications yourself:
 
