@@ -22,7 +22,7 @@ Thanks to [SatyPardus](https://github.com/SatyPardus) for the reverse engineerin
 
 ---
 
-The mod requires modifications on your Azerothcore server, and if you want to be able to see happiness and diet information then you will need to modify your client as well, that is explained later.
+The mod requires modifications on your Azerothcore server, and if you want to be able to see pet happiness and diet information then you will need to modify your client as well, that is explained later.
 
 ## **AZEROTHCORE MODIFICATIONS**
 
