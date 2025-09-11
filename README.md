@@ -99,7 +99,7 @@ Then download this lua script: [all-classes-learn-hunter-pet-spells.lua](https:/
 | Description |  |
 
 
-**/src/server/game/Entities/Player/PlayerGossip.cpp**
+### **/src/server/game/Entities/Player/PlayerGossip.cpp**
 
 **Line ????**
 
