@@ -74,18 +74,26 @@ Then download this lua script: [all-classes-learn-hunter-pet-spells.lua](https:/
 
 **/src/server/game/Entities/Player/Player.cpp**
 
+**Line 1207**
+
+| Before               | After               |
+| ---------------------- | ---------------------- |
+| test1 | test2 |
+
+    // show pet at selection character in character list only for non-ghost character
+    if (result && !(playerFlags & PLAYER_FLAGS_GHOST) && (plrClass == CLASS_WARLOCK || plrClass == CLASS_HUNTER || (plrClass == CLASS_DEATH_KNIGHT && (fields[21].Get<uint32>()&PLAYER_EXTRA_SHOW_DK_PET))))
+    {
+
+With this change you will be able to see your character's pet on the character selection screen, no matter your character's class.
+
+
+**Line 13668 ?**
+
 | Before               | After               |
 | ---------------------- | ---------------------- |
 | test1 | test2 |
 
 
-1207
-    // show pet at selection character in character list only for non-ghost character
-    if (result && !(playerFlags & PLAYER_FLAGS_GHOST) && (plrClass == CLASS_WARLOCK || plrClass == CLASS_HUNTER || (plrClass == CLASS_DEATH_KNIGHT && (fields[21].Get<uint32>()&PLAYER_EXTRA_SHOW_DK_PET))))
-    {
-
-
-13668 ?
                 LOG_ERROR("entities.player", "Player {} (GUID: {}), has skill ({}) that is invalid for the race/class combination (Race: {}, Class: {}). Will be deleted.",
                     GetName(), GetGUID().GetCounter(), skill, getRace(), getClass());
 
@@ -94,29 +102,57 @@ Then download this lua script: [all-classes-learn-hunter-pet-spells.lua](https:/
                 continue;
             }
 
-14250
+
+**Line 14250**
+
+| Before               | After               |
+| ---------------------- | ---------------------- |
+| test1 | test2 |
+
 
     if (IsClass(CLASS_HUNTER, CLASS_CONTEXT_PET))
     {
         return true;
     }
 
-2140 ?
+
+**Line 2140 ?**
+
+| Before               | After               |
+| ---------------------- | ---------------------- |
+| test1 | test2 |
+
     if (npcflagmask & (UNIT_NPC_FLAG_TRAINER | UNIT_NPC_FLAG_TRAINER_CLASS) && creature->GetCreatureTemplate()->trainer_type == TRAINER_TYPE_CLASS && !IsClass((Classes)creature->GetCreatureTemplate()->trainer_class, CLASS_CONTEXT_CLASS_TRAINER))
         return nullptr;
 
 
-14725
+**Line 14725**
+
+| Before               | After               |
+| ---------------------- | ---------------------- |
+| test1 | test2 |
 
     stmt->SetData(index++, 4);
 
 
 **/src/server/game/Entities/Player/PlayerGossip.cpp**
 
+**Line ????**
+
+| Before               | After               |
+| ---------------------- | ---------------------- |
+| test1 | test2 |
+
                 case GOSSIP_OPTION_UNLEARNPETTALENTS:
                     if (!GetPet() || GetPet()->getPetType() != HUNTER_PET || GetPet()->m_spells.size() <= 1 || creature->GetCreatureTemplate()->trainer_type != TRAINER_TYPE_PETS || creature->GetCreatureTemplate()->trainer_class != CLASS_HUNTER)
                         canTalk = false;
                     break;
+
+**Line ???**
+
+| Before               | After               |
+| ---------------------- | ---------------------- |
+| test1 | test2 |
 
 case GOSSIP_OPTION_STABLEPET:
                     if (!IsClass(CLASS_HUNTER, CLASS_CONTEXT_PET))
@@ -125,7 +161,12 @@ case GOSSIP_OPTION_STABLEPET:
 
 **/src/server/game/Entities/Pet/Pet.cpp**
 
-1049
+**Line 1049**
+
+| Before               | After               |
+| ---------------------- | ---------------------- |
+| test1 | test2 |
+
 
                 else if (owner->IsClass(CLASS_HUNTER, CLASS_CONTEXT_PET))
                 {
@@ -133,7 +174,11 @@ case GOSSIP_OPTION_STABLEPET:
                 }
 
 
-1081 ? 
+**Line 1081 ?** 
+
+| Before               | After               |
+| ---------------------- | ---------------------- |
+| test1 | test2 |
 
     if (!owner->IsClass(CLASS_HUNTER, CLASS_CONTEXT_PET) && cinfo->BaseAttackTime >= 1000)
         attackTime = cinfo->BaseAttackTime;
@@ -141,7 +186,11 @@ case GOSSIP_OPTION_STABLEPET:
 
 **/src/server/game/Entities/Creature/Creature.cpp**
 
-1286
+**Line 1286**
+
+| Before               | After               |
+| ---------------------- | ---------------------- |
+| test1 | test2 |
 
         case TRAINER_TYPE_PETS:
             if (m_creatureInfo->trainer_class && !player->IsClass((Classes)m_creatureInfo->trainer_class, CLASS_CONTEXT_CLASS_TRAINER))
@@ -154,6 +203,13 @@ case GOSSIP_OPTION_STABLEPET:
             break;
 
 **/src/server/game/Handlers/PetHandler.cpp**
+
+**Line ???**
+
+| Before               | After               |
+| ---------------------- | ---------------------- |
+| test1 | test2 |
+
 
 bool WorldSession::CheckStableMaster(ObjectGuid guid)
 {
@@ -178,9 +234,14 @@ bool WorldSession::CheckStableMaster(ObjectGuid guid)
     return true;
 }
 
+
 **/src/server/game/Spells/SpellEffects.cpp**
 
-3103
+**Line 3103**
+
+| Before               | After               |
+| ---------------------- | ---------------------- |
+| test1 | test2 |
 
     if (!m_caster->IsClass(CLASS_HUNTER, CLASS_CONTEXT_PET))
         return;
