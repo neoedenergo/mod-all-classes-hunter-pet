@@ -203,7 +203,7 @@ bool WorldSession::CheckStableMaster(ObjectGuid guid)
 
 You can either use my tool to patch your binary:
 
-Download X and patch your wow.exe with the ``All Classes Hunter Pet UI`` option.
+Download [https://forgejo.neoeden.org/ergo/wow-335a-client-binary-patcher](https://forgejo.neoeden.org/ergo/wow-335a-client-binary-patcher) and patch your wow.exe with the ``All Classes Hunter Pet UI`` option.
 
 Or you can edit your binary yourself using a disassembler:
 
