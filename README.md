@@ -34,7 +34,7 @@ No matter the mechanism you choose to teach characters the hunter pet skills, yo
 
 There are multiple ways you can give the characters in your server the ability to use hunter pet spells, here I specify two ways, the first gives all characters the spells on character creation, the second gives them the spells when they reach level 10, 12 and 60 according to blizzlike hunter progression, you can do it in a different way if you like.
 
-**On character creation:**
+**- On character creation:**
 
 Put this line on your worldserver.conf file:
 
@@ -57,7 +57,7 @@ INSERT INTO playercreateinfo_spell_custom (racemask, classmask, Spell, Note) VAL
 
 This will make it so that all characters of all classes are taught all spells needed for handling hunter pets at character creation.
 
-**On level 10, 12 and 60:**
+**- On level 10, 12 and 60:**
 
 This way characters will automatically learn spells to handle pets at level 10, then at level 12 they will learn Mend Pet, and at level 60 they will learn Beast Mastery which allows them to tame exotic pets.
 
@@ -72,11 +72,7 @@ Then download this lua script: [all-classes-learn-hunter-pet-spells.lua](https:/
 
 | Before               | After               |
 | ---------------------- | ---------------------- |
-| ``// show pet at selection character in character list only for non-ghost character
-    if (result && !(playerFlags & PLAYER_FLAGS_GHOST) && (plrClass == CLASS_WARLOCK || plrClass == CLASS_HUNTER || (plrClass == CLASS_DEATH_KNIGHT && (fields[21].Get<uint32>()&PLAYER_EXTRA_SHOW_DK_PET))))
-    {`` | ``// show pet at selection character in character list only for non-ghost character
-    if (result && !(playerFlags & PLAYER_FLAGS_GHOST) && (plrClass == CLASS_WARLOCK || plrClass == CLASS_HUNTER || (plrClass == CLASS_DEATH_KNIGHT && (fields[21].Get<uint32>()&PLAYER_EXTRA_SHOW_DK_PET))))
-    {`` |
+| test1 | test2 |
 
 
 1207
