@@ -72,13 +72,7 @@ Then download this lua script: [all-classes-learn-hunter-pet-spells.lua](https:/
 
 ## **2 - Edit the following .cpp files:**
 
-
-
-<table>
-    <tr>
-        **/src/server/game/Entities/Player/Player.cpp**
-    </tr>
-</table> 
+### **/src/server/game/Entities/Player/Player.cpp**
 
 | Line number | 1207 |
 | --- | --- |
@@ -129,7 +123,7 @@ case GOSSIP_OPTION_STABLEPET:
                         canTalk = false;
                     break;
 
-**/src/server/game/Entities/Pet/Pet.cpp**
+### **/src/server/game/Entities/Pet/Pet.cpp**
 
 **Line 1049**
 
@@ -154,7 +148,7 @@ case GOSSIP_OPTION_STABLEPET:
         attackTime = cinfo->BaseAttackTime;
 
 
-**/src/server/game/Entities/Creature/Creature.cpp**
+### **/src/server/game/Entities/Creature/Creature.cpp**
 
 **Line 1286**
 
@@ -172,7 +166,7 @@ case GOSSIP_OPTION_STABLEPET:
             }
             break;
 
-**/src/server/game/Handlers/PetHandler.cpp**
+### **/src/server/game/Handlers/PetHandler.cpp**
 
 **Line ???**
 
@@ -205,7 +199,7 @@ bool WorldSession::CheckStableMaster(ObjectGuid guid)
 }
 
 
-**/src/server/game/Spells/SpellEffects.cpp**
+### **/src/server/game/Spells/SpellEffects.cpp**
 
 **Line 3103**
 
