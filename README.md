@@ -66,9 +66,18 @@ You will need to install the Eluna module for Azerothcore: [https://github.com/a
 Then download this lua script: [all-classes-learn-hunter-pet-spells.lua](https://forgejo.neoeden.org/ergo/mod-all-classes-hunter-pet/src/branch/main/all-classes-learn-hunter-pet-spells.lua) and put it in the ``/env/dist/bin/lua_scripts`` directory.
 
 
-### **2 - Edit the following .cpp files in your Azerothcore server directory:**
+### **2 - Edit the following .cpp files:**
 
 **/src/server/game/Entities/Player/Player.cpp**
+
+| Before               | After               |
+| ---------------------- | ---------------------- |
+| ``// show pet at selection character in character list only for non-ghost character
+    if (result && !(playerFlags & PLAYER_FLAGS_GHOST) && (plrClass == CLASS_WARLOCK || plrClass == CLASS_HUNTER || (plrClass == CLASS_DEATH_KNIGHT && (fields[21].Get<uint32>()&PLAYER_EXTRA_SHOW_DK_PET))))
+    {`` | ``// show pet at selection character in character list only for non-ghost character
+    if (result && !(playerFlags & PLAYER_FLAGS_GHOST) && (plrClass == CLASS_WARLOCK || plrClass == CLASS_HUNTER || (plrClass == CLASS_DEATH_KNIGHT && (fields[21].Get<uint32>()&PLAYER_EXTRA_SHOW_DK_PET))))
+    {`` |
+
 
 1207
     // show pet at selection character in character list only for non-ghost character
