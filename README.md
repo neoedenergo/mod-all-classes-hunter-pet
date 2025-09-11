@@ -78,7 +78,7 @@ Then download this lua script: [all-classes-learn-hunter-pet-spells.lua](https:/
 
 | Line number | 1207 |
 | --- | --- |
-| Before | <code>if (result && !(playerFlags & PLAYER_FLAGS_GHOST) && (plrClass == CLASS_WARLOCK &#124;&#124; true &#124;&#124; (plrClass == CLASS_DEATH_KNIGHT && (fields[21].Get<uint32>()&PLAYER_EXTRA_SHOW_DK_PET))))</code> |
+| Before | <pre><code class="c++">if (result && !(playerFlags & PLAYER_FLAGS_GHOST) && (plrClass == CLASS_WARLOCK &#124;&#124; true &#124;&#124; (plrClass == CLASS_DEATH_KNIGHT && (fields[21].Get<uint32>()&PLAYER_EXTRA_SHOW_DK_PET))))</code></pre> |
 | After | if (result && !(playerFlags & PLAYER_FLAGS_GHOST) && (plrClass == CLASS_WARLOCK || true || (plrClass == CLASS_DEATH_KNIGHT && (fields[21].Get<uint32>()&PLAYER_EXTRA_SHOW_DK_PET)))) |
 
 | Line number | Before | After |
