@@ -131,21 +131,12 @@ Then download this lua script: [all-classes-learn-hunter-pet-spells.lua](https:/
 
 ### **/src/server/game/Entities/Creature/Creature.cpp**
 
-**Line 1286**
+| Line number | 1286 |
+| --- | --- |
+| Before | <pre><code class="language-cpp">if (m_creatureInfo->trainer_class && !player->IsClass((Classes)m_creatureInfo->trainer_class, CLASS_CONTEXT_CLASS_TRAINER))</code></pre> |
+| After | <pre><code class="language-cpp">if (m_creatureInfo->trainer_class)</code></pre> |
+| Description |  |
 
-| Before               | After               |
-| ---------------------- | ---------------------- |
-| test1 | test2 |
-
-        case TRAINER_TYPE_PETS:
-            if (m_creatureInfo->trainer_class && !player->IsClass((Classes)m_creatureInfo->trainer_class, CLASS_CONTEXT_CLASS_TRAINER))
-            {
-                if (npcFlags)
-                    *npcFlags &= ~UNIT_NPC_FLAG_TRAINER_CLASS;
-
-                return false;
-            }
-            break;
 
 ### **/src/server/game/Handlers/PetHandler.cpp**
 
