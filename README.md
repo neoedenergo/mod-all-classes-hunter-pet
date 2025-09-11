@@ -17,7 +17,7 @@ Thanks to [SatyPardus](https://github.com/SatyPardus) for the reverse engineerin
 ✅ Pet feeding and loyalty level\
 ❌ Stable Master\
 ❌ Pet Trainer\
-❓ Simultaneous Warlock/Mage/Death Knight pet + Hunter pet
+❓ Simultaneous Warlock/Mage/Death Knight pet + Hunter pet\
 ❓ Taming Exotic pets (Beast Mastery)
 
 ---
