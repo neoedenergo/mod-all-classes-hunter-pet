@@ -23,22 +23,28 @@ Thanks to [SatyPardus](https://github.com/SatyPardus) for the reverse engineerin
 
 ### If you just want to download the files, overwrite your non-modded files, and play:
 
-[Download Server Files]() (WIP)
-
-[Download Client Files]() (WIP)
-
+[Download Files]() (WIP)
 
 ### If you want to do the modifications yourself:
-
-[Azerothcore Modifications](#AZEROTHCORE-MODIFICATIONS)
-
-[Client Modifications](#CLIENT-MODIFICATIONS)
 
 ---
 
 ## **AZEROTHCORE MODIFICATIONS**
 
-### **1 - Run this two SQL queries on your acore_characters database:**
+### **1 - Giving characters pet-related spells:**
+
+No matter the mechanism you choose to teach characters the hunter pet skills, you need this two lines on your worldserver.conf:
+
+```PlayerStart.CustomSpells = 1```
+
+```ValidateSkillLearnedBySpells = 0```
+
+There are multiple ways you can give the characters in your server the ability to use hunter pet spells, here I specify two ways, the first gives all characters the spells on character creation, the second gives them the spells when they reach level 10, you can do it in a different way if you like.
+
+**On character creation:**
+
+Run this SQL query on your acore_characters database:
+
 ```
 INSERT INTO playercreateinfo_spell_custom (racemask, classmask, Spell, Note) VALUES
 (0, 0xFFFF, 1515, 'Tame Beast'),
@@ -50,9 +56,11 @@ INSERT INTO playercreateinfo_spell_custom (racemask, classmask, Spell, Note) VAL
 (0, 0xFFFF, 1462, 'Beast Lore'),
 (0, 0xFFFF, 5149, 'Beast Training');
 ```
+
 This will make it so that all characters of all classes are taught the spells needed for handling hunter pets at character creation.
 
-Also go to your worldserver.conf and make sure that the line PlayerStart.CustomSpells equals to 1.
+**On level 10:**
+
 
 
 In order to use the Stable Master to store pets, your character needs to have stable_slots = 4 in the database, for hunters this happens by default but for other classes it is normally 0, by running this query you will make it so that the database always assigns the value 4 to all newly created characters.
@@ -90,6 +98,12 @@ ALTER TABLE `characters` MODIFY `stable_slots` TINYINT UNSIGNED NOT NULL DEFAULT
 2140 ?
     if (npcflagmask & (UNIT_NPC_FLAG_TRAINER | UNIT_NPC_FLAG_TRAINER_CLASS) && creature->GetCreatureTemplate()->trainer_type == TRAINER_TYPE_CLASS && !IsClass((Classes)creature->GetCreatureTemplate()->trainer_class, CLASS_CONTEXT_CLASS_TRAINER))
         return nullptr;
+
+
+14725
+
+    stmt->SetData(index++, 4);
+
 
 **/src/server/game/Entities/Player/PlayerGossip.cpp**
 
