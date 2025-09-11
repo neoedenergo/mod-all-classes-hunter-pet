@@ -131,59 +131,22 @@ Then download this lua script: [all-classes-learn-hunter-pet-spells.lua](https:/
 
 ### **/src/server/game/Entities/Creature/Creature.cpp**
 
-| Line number | 1286 |
+| Line number | 1287 |
 | --- | --- |
 | Before | <pre><code class="language-cpp">if (m_creatureInfo->trainer_class && !player->IsClass((Classes)m_creatureInfo->trainer_class, CLASS_CONTEXT_CLASS_TRAINER))</code></pre> |
 | After | <pre><code class="language-cpp">if (m_creatureInfo->trainer_class)</code></pre> |
-| Description |  |
-
-
-### **/src/server/game/Handlers/PetHandler.cpp**
-
-**Line ???**
-
-| Before               | After               |
-| ---------------------- | ---------------------- |
-| test1 | test2 |
-
-
-bool WorldSession::CheckStableMaster(ObjectGuid guid)
-{
-    // spell case or GM
-    if (guid == GetPlayer()->GetGUID())
-    {
-        if (!GetPlayer()->IsGameMaster() && !GetPlayer()->HasOpenStableAura())
-        {
-            LOG_DEBUG("network.opcode", "Player ({}) attempt open stable in cheating way.", guid.ToString());
-            return false;
-        }
-    }
-    // stable master case
-    else
-    {
-        if (!GetPlayer()->GetNPCIfCanInteractWith(guid, UNIT_NPC_FLAG_STABLEMASTER))
-        {
-            LOG_DEBUG("network.opcode", "Stablemaster ({}) not found or you can't interact with him.", guid.ToString());
-            return false;
-        }
-    }
-    return true;
-}
+| Description | Allows all classes to talk to the pet trainer. |
 
 
 ### **/src/server/game/Spells/SpellEffects.cpp**
 
-**Line 3103**
-
-| Before               | After               |
-| ---------------------- | ---------------------- |
-| test1 | test2 |
-
-    if (!m_caster->IsClass(CLASS_HUNTER, CLASS_CONTEXT_PET))
-        return;
-
-
-
+| Line number | 3103 |
+| --- | --- |
+| Before | <pre><code class="language-cpp">if (!m_caster->IsClass(CLASS_HUNTER, CLASS_CONTEXT_PET))
+        return;</code></pre> |
+| After | <pre><code class="language-cpp">//if (!m_caster->IsClass(CLASS_HUNTER, CLASS_CONTEXT_PET))
+        //return;</code></pre> |
+| Description | Allows all classes to tame beasts. |
 
 
 ---
