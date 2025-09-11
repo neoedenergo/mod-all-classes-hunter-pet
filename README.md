@@ -76,9 +76,12 @@ Then download this lua script: [all-classes-learn-hunter-pet-spells.lua](https:/
 
 **Line 1207**
 
-| Before               | After               |
-| ---------------------- | ---------------------- |
-| test1 | test2 |
+| Line number | Before | After |
+| ---------------------- | ---------------------- | ---------------------- |
+| 1207 | test2 | asd |
+| 1207 | test2 | asd |
+| 1207 | test2 | asd |
+| 1207 | test2 | asd |
 
     // show pet at selection character in character list only for non-ghost character
     if (result && !(playerFlags & PLAYER_FLAGS_GHOST) && (plrClass == CLASS_WARLOCK || plrClass == CLASS_HUNTER || (plrClass == CLASS_DEATH_KNIGHT && (fields[21].Get<uint32>()&PLAYER_EXTRA_SHOW_DK_PET))))
