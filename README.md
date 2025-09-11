@@ -116,27 +116,17 @@ Then download this lua script: [all-classes-learn-hunter-pet-spells.lua](https:/
 
 ### **/src/server/game/Entities/Pet/Pet.cpp**
 
-**Line 1049**
+| Line number | 1049 |
+| --- | --- |
+| Before | <pre><code class="language-cpp">else if (owner->IsClass(CLASS_HUNTER, CLASS_CONTEXT_PET))</code></pre> |
+| After | <pre><code class="language-cpp">else if (true)</code></pre> |
+| Description |  |
 
-| Before               | After               |
-| ---------------------- | ---------------------- |
-| test1 | test2 |
-
-
-                else if (owner->IsClass(CLASS_HUNTER, CLASS_CONTEXT_PET))
-                {
-                    petType = HUNTER_PET;
-                }
-
-
-**Line 1081 ?** 
-
-| Before               | After               |
-| ---------------------- | ---------------------- |
-| test1 | test2 |
-
-    if (!owner->IsClass(CLASS_HUNTER, CLASS_CONTEXT_PET) && cinfo->BaseAttackTime >= 1000)
-        attackTime = cinfo->BaseAttackTime;
+| Line number | 1081 ? |
+| --- | --- |
+| Before | <pre><code class="language-cpp">if (!owner->IsClass(CLASS_HUNTER, CLASS_CONTEXT_PET) && cinfo->BaseAttackTime >= 1000)</code></pre> |
+| After | <pre><code class="language-cpp">if (false && cinfo->BaseAttackTime >= 1000)</code></pre> |
+| Description |  |
 
 
 ### **/src/server/game/Entities/Creature/Creature.cpp**
