@@ -72,14 +72,18 @@ Then download this lua script: [all-classes-learn-hunter-pet-spells.lua](https:/
 
 ## **2 - Edit the following .cpp files:**
 
-**/src/server/game/Entities/Player/Player.cpp**
 
-**Line 1207**
+
+<table>
+    <tr>
+        **/src/server/game/Entities/Player/Player.cpp**
+    </tr>
+</table> 
 
 | Line number | 1207 |
 | --- | --- |
-| Before | <pre><code class="language-cpp">if (result && !(playerFlags & PLAYER_FLAGS_GHOST) && (plrClass == CLASS_WARLOCK &#124;&#124; true &#124;&#124; (plrClass == CLASS_DEATH_KNIGHT && (fields[21].Get<uint32>()&PLAYER_EXTRA_SHOW_DK_PET))))</code></pre> |
-| After | <pre><code class="language-cpp">if (result && !(playerFlags & PLAYER_FLAGS_GHOST) && (plrClass == CLASS_WARLOCK || plrClass == CLASS_HUNTER || (plrClass == CLASS_DEATH_KNIGHT && (fields[21].Get<uint32>()&PLAYER_EXTRA_SHOW_DK_PET))))</code></pre> |
+| Before | <pre><code class="language-cpp">if (result && !(playerFlags & PLAYER_FLAGS_GHOST) && (plrClass == CLASS_WARLOCK &#124;&#124; plrClass == CLASS_HUNTER &#124;&#124; (plrClass == CLASS_DEATH_KNIGHT && (fields[21].Get<uint32>()&PLAYER_EXTRA_SHOW_DK_PET))))</code></pre> |
+| After | <pre><code class="language-cpp">if (result && !(playerFlags & PLAYER_FLAGS_GHOST) && (plrClass == CLASS_WARLOCK &#124;&#124; true &#124;&#124; (plrClass == CLASS_DEATH_KNIGHT && (fields[21].Get<uint32>()&PLAYER_EXTRA_SHOW_DK_PET))))</code></pre> |
 | Description | With this change you will be able to see your character's pet on the character selection screen, no matter your character's class. |
 
 | Line number | 14250 |
