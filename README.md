@@ -80,17 +80,17 @@ Then download this lua script: [all-classes-learn-hunter-pet-spells.lua](https:/
 | After | <pre><code class="language-cpp">if (result && !(playerFlags & PLAYER_FLAGS_GHOST) && (plrClass == CLASS_WARLOCK &#124;&#124; true &#124;&#124; (plrClass == CLASS_DEATH_KNIGHT && (fields[21].Get<uint32>()&PLAYER_EXTRA_SHOW_DK_PET))))</code></pre> |
 | Description | With this change you will be able to see your character's pet on the character selection screen, no matter your character's class. |
 
-| Line number | 14250 |
-| --- | --- |
-| Before | <pre><code class="language-cpp">if (IsClass(CLASS_HUNTER, CLASS_CONTEXT_PET))</code></pre> |
-| After | <pre><code class="language-cpp">if (true)</code></pre> |
-| Description |  |
-
 | Line number | 2140 ? |
 | --- | --- |
 | Before | <pre><code class="language-cpp"></code></pre> |
 | After | <pre><code class="language-cpp"></code></pre> |
 | Description |  |
+
+| Line number | 14250 ? |
+| --- | --- |
+| Before | <pre><code class="language-cpp">if (IsClass(CLASS_HUNTER, CLASS_CONTEXT_PET))</code></pre> |
+| After | <pre><code class="language-cpp">if (true)</code></pre> |
+| Description | Allows you to resummon your pet. |
 
 | Line number | 14725 ? |
 | --- | --- |
@@ -101,16 +101,14 @@ Then download this lua script: [all-classes-learn-hunter-pet-spells.lua](https:/
 
 ### **/src/server/game/Entities/Player/PlayerGossip.cpp**
 
-**Line ????**
+| Line number | 101 |
+| --- | --- |
+| Before | <pre><code class="language-cpp">if (!GetPet() &#124;&#124; GetPet()->getPetType() != HUNTER_PET &#124;&#124; GetPet()->m_spells.size() <= 1 &#124;&#124; creature->GetCreatureTemplate()->trainer_type != TRAINER_TYPE_PETS &#124;&#124; creature->GetCreatureTemplate()->trainer_class != CLASS_HUNTER)</code></pre> |
+| After | <pre><code class="language-cpp">if (!GetPet() &#124;&#124; GetPet()->getPetType() != HUNTER_PET &#124;&#124; GetPet()->m_spells.size() <= 1 &#124;&#124; creature->GetCreatureTemplate()->trainer_type != TRAINER_TYPE_PETS)
+</code></pre> |
+| Description |  |
 
-| Before               | After               |
-| ---------------------- | ---------------------- |
-| test1 | test2 |
 
-                case GOSSIP_OPTION_UNLEARNPETTALENTS:
-                    if (!GetPet() || GetPet()->getPetType() != HUNTER_PET || GetPet()->m_spells.size() <= 1 || creature->GetCreatureTemplate()->trainer_type != TRAINER_TYPE_PETS || creature->GetCreatureTemplate()->trainer_class != CLASS_HUNTER)
-                        canTalk = false;
-                    break;
 
 **Line ???**
 
