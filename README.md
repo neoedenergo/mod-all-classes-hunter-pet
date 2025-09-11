@@ -1,6 +1,6 @@
 ![ACHP](https://forgejo.neoeden.org/ergo/mod-all-classes-hunter-pet/raw/branch/main/ACHP.png)
 
-## Hunter pets for all classes in Azerothcore.
+# Hunter pets for all classes in Azerothcore.
 
 This mod was made in collaboration with Uniquisher.
 
@@ -24,9 +24,9 @@ Thanks to [SatyPardus](https://github.com/SatyPardus) for the reverse engineerin
 
 The mod requires modifications on your Azerothcore server, and if you want to be able to see pet happiness and diet information then you will need to modify your client as well, that is explained later.
 
-## **AZEROTHCORE MODIFICATIONS**
+# **AZEROTHCORE MODIFICATIONS**
 
-### **1 - Giving characters pet-related spells:**
+## **1 - Giving characters pet-related spells:**
 
 No matter the mechanism you choose to teach characters the hunter pet skills, you need to have this line on your worldserver.conf:
 
@@ -35,7 +35,7 @@ No matter the mechanism you choose to teach characters the hunter pet skills, yo
 There are multiple ways you can give the characters in your server the ability to use hunter pet spells, here I specify two ways, the first gives all characters the spells on character creation, the second gives them the spells when they reach level 10, 12 and 60 according to blizzlike hunter progression, you can do it in a different way if you like.
 
 
-#### **- On character creation:**
+### **- On character creation:**
 
 Put this line on your worldserver.conf file:
 
@@ -59,7 +59,7 @@ INSERT INTO playercreateinfo_spell_custom (racemask, classmask, Spell, Note) VAL
 This will make it so that all characters of all classes are taught all spells needed for handling hunter pets at character creation.
 
 
-#### **- On level 10, 12 and 60:**
+### **- On level 10, 12 and 60:**
 
 This way characters will automatically learn spells to handle pets at level 10, then at level 12 they will learn Mend Pet, and at level 60 they will learn Beast Mastery which allows them to tame exotic pets.
 
@@ -68,7 +68,7 @@ You will need to install the Eluna module for Azerothcore: [https://github.com/a
 Then download this lua script: [all-classes-learn-hunter-pet-spells.lua](https://forgejo.neoeden.org/ergo/mod-all-classes-hunter-pet/src/branch/main/all-classes-learn-hunter-pet-spells.lua) and put it in the ``/env/dist/bin/lua_scripts`` directory.
 
 
-### **2 - Edit the following .cpp files:**
+## **2 - Edit the following .cpp files:**
 
 **/src/server/game/Entities/Player/Player.cpp**
 
@@ -189,9 +189,9 @@ bool WorldSession::CheckStableMaster(ObjectGuid guid)
 
 ---
 
-## **CLIENT MODIFICATIONS**
+# **CLIENT MODIFICATIONS**
 
-### **1 - Edit the wow.exe binary in your client directory using a disassembler/decompiler:**
+## **1 - Edit the wow.exe binary in your client directory using a disassembler/decompiler:**
 
 GetPetPersonalityRow
 NOP 17 bytes starting from 0x0071F3BF
