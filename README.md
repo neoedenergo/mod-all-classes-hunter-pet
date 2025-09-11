@@ -107,18 +107,12 @@ Then download this lua script: [all-classes-learn-hunter-pet-spells.lua](https:/
 | After | <pre><code class="language-cpp">if (!GetPet() &#124;&#124; GetPet()->getPetType() != HUNTER_PET &#124;&#124; GetPet()->m_spells.size() <= 1 &#124;&#124; creature->GetCreatureTemplate()->trainer_type != TRAINER_TYPE_PETS)</code></pre> |
 | Description |  |
 
+| Line number | 113 |
+| --- | --- |
+| Before | <pre><code class="language-cpp">if (!IsClass(CLASS_HUNTER, CLASS_CONTEXT_PET))</code></pre> |
+| After | <pre><code class="language-cpp">if (false)</code></pre> |
+| Description |  |
 
-
-**Line ???**
-
-| Before               | After               |
-| ---------------------- | ---------------------- |
-| test1 | test2 |
-
-case GOSSIP_OPTION_STABLEPET:
-                    if (!IsClass(CLASS_HUNTER, CLASS_CONTEXT_PET))
-                        canTalk = false;
-                    break;
 
 ### **/src/server/game/Entities/Pet/Pet.cpp**
 
