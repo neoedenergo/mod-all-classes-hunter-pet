@@ -201,7 +201,7 @@ bool WorldSession::CheckStableMaster(ObjectGuid guid)
 
 ## **1 - Edit the wow.exe binary in your client directory using a disassembler/decompiler:**
 
-You can either use my tool to edit your binary:
+You can either use my tool to patch your binary:
 
 Download X and patch your wow.exe with the ``All Classes Hunter Pet UI`` option.
 
