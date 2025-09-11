@@ -77,6 +77,7 @@ Then download this lua script: [all-classes-learn-hunter-pet-spells.lua](https:/
 **Line 1207**
 
 | Line number | 1207 |
+| --- | --- |
 | Before | test |
 | After | after |
 
