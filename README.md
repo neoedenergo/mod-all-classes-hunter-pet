@@ -42,7 +42,7 @@ No matter the mechanism you choose to teach characters the hunter pet skills, yo
 
 ```ValidateSkillLearnedBySpells = 0```
 
-There are multiple ways you can give the characters in your server the ability to use hunter pet spells, here I specify two ways, the first gives all characters the spells on character creation, the second gives them the spells when they reach level 10, you can do it in a different way if you like.
+There are multiple ways you can give the characters in your server the ability to use hunter pet spells, here I specify two ways, the first gives all characters the spells on character creation, the second gives them the spells when they reach level 10, 12 and 60 according to blizzlike hunter progression, you can do it in a different way if you like.
 
 **On character creation:**
 
@@ -62,9 +62,12 @@ INSERT INTO playercreateinfo_spell_custom (racemask, classmask, Spell, Note) VAL
 
 This will make it so that all characters of all classes are taught the spells needed for handling hunter pets at character creation.
 
-**On level 10:**
+**On level 10, 12 and 60:**
 
+This way characters will automatically learn spells to handle pets at level 10, then at level 12 they will learn Mend Pet, and at level 60 they will learn Beast Mastery which allows them to tame exotic pets.
 
+You will need to install the Eluna module for Azerothcore: [https://github.com/azerothcore/mod-eluna](https://github.com/azerothcore/mod-eluna)
+Then download this lua script: [all-classes-learn-hunter-pet-spells.lua](https://forgejo.neoeden.org/ergo/mod-all-classes-hunter-pet/src/branch/main/all-classes-learn-hunter-pet-spells.lua) and put it in the /env/dist/bin/lua_scripts directory.
 
 In order to use the Stable Master to store pets, your character needs to have stable_slots = 4 in the database, for hunters this happens by default but for other classes it is normally 0, by running this query you will make it so that the database always assigns the value 4 to all newly created characters.
 
