@@ -2,8 +2,6 @@
 
 ## Hunter pets for all classes in Azerothcore.
 
-This is a mod that requires changes in both Azerothcore and the WOTLK 3.3.5a client (Editing of the wow.exe binary with a disassembler/decompiler)
-
 This mod was made in collaboration with Uniquisher.
 
 Thanks to [SatyPardus](https://github.com/SatyPardus) for the reverse engineering of the client's binary.
