@@ -18,7 +18,7 @@ Thanks to [SatyPardus](https://github.com/SatyPardus) for the reverse engineerin
 ✅ Taming Exotic pets (Beast Mastery)\
 ❌ Stable Master\
 ❌ Pet Trainer\
-❓ Simultaneous Warlock/Mage/Death Knight pet + Hunter pet
+❌ Simultaneous Warlock/Mage/Death Knight pet + Hunter pet
 
 ---
 
