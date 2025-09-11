@@ -28,15 +28,17 @@ The mod requires modifications on your Azerothcore server, and if you want to be
 
 ### **1 - Giving characters pet-related spells:**
 
-No matter the mechanism you choose to teach characters the hunter pet skills, you need this two lines on your worldserver.conf:
+No matter the mechanism you choose to teach characters the hunter pet skills, you need to have this line on your worldserver.conf:
 
-```PlayerStart.CustomSpells = 1```
-
-```ValidateSkillLearnedBySpells = 0```
+``ValidateSkillLearnedBySpells = 0``
 
 There are multiple ways you can give the characters in your server the ability to use hunter pet spells, here I specify two ways, the first gives all characters the spells on character creation, the second gives them the spells when they reach level 10, 12 and 60 according to blizzlike hunter progression, you can do it in a different way if you like.
 
 **On character creation:**
+
+Put this line on your worldserver.conf file:
+
+``PlayerStart.CustomSpells = 1``
 
 Run this SQL query on your acore_world database:
 
@@ -49,10 +51,11 @@ INSERT INTO playercreateinfo_spell_custom (racemask, classmask, Spell, Note) VAL
 (0, 0xFFFF, 136, 'Mend Pet'),
 (0, 0xFFFF, 6991, 'Feed Pet'),
 (0, 0xFFFF, 1462, 'Beast Lore'),
-(0, 0xFFFF, 5149, 'Beast Training');
+(0, 0xFFFF, 5149, 'Beast Training'),
+(0, 0xFFFF, 53270, 'Beast Mastery');
 ```
 
-This will make it so that all characters of all classes are taught the spells needed for handling hunter pets at character creation.
+This will make it so that all characters of all classes are taught all spells needed for handling hunter pets at character creation.
 
 **On level 10, 12 and 60:**
 
