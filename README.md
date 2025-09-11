@@ -22,15 +22,7 @@ Thanks to [SatyPardus](https://github.com/SatyPardus) for the reverse engineerin
 
 ---
 
-### If you just want to download the files, overwrite your non-modded files, and play:
-
-[Download ]() (WIP)
-
-[Download wow.exe]() (WIP)
-
-### If you want to do the modifications yourself:
-
----
+The mod requires modifications on your Azerothcore server, and if you want to be able to see happiness and diet information then you will need to modify your client as well, that is explained later.
 
 ## **AZEROTHCORE MODIFICATIONS**
 
