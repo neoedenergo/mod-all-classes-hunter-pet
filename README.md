@@ -17,10 +17,10 @@ Thanks to [SatyPardus](https://github.com/SatyPardus) for the reverse engineerin
 ✅ Pet skills\
 ✅ Pet renaming\
 ✅ Pet feeding and loyalty level\
+✅ Taming Exotic pets (Beast Mastery)\
 ❌ Stable Master\
 ❌ Pet Trainer\
-❓ Simultaneous Warlock/Mage/Death Knight pet + Hunter pet\
-❓ Taming Exotic pets (Beast Mastery)
+❓ Simultaneous Warlock/Mage/Death Knight pet + Hunter pet
 
 ---
 
