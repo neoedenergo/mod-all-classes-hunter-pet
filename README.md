@@ -104,8 +104,7 @@ Then download this lua script: [all-classes-learn-hunter-pet-spells.lua](https:/
 | Line number | 101 |
 | --- | --- |
 | Before | <pre><code class="language-cpp">if (!GetPet() &#124;&#124; GetPet()->getPetType() != HUNTER_PET &#124;&#124; GetPet()->m_spells.size() <= 1 &#124;&#124; creature->GetCreatureTemplate()->trainer_type != TRAINER_TYPE_PETS &#124;&#124; creature->GetCreatureTemplate()->trainer_class != CLASS_HUNTER)</code></pre> |
-| After | <pre><code class="language-cpp">if (!GetPet() &#124;&#124; GetPet()->getPetType() != HUNTER_PET &#124;&#124; GetPet()->m_spells.size() <= 1 &#124;&#124; creature->GetCreatureTemplate()->trainer_type != TRAINER_TYPE_PETS)
-</code></pre> |
+| After | <pre><code class="language-cpp">if (!GetPet() &#124;&#124; GetPet()->getPetType() != HUNTER_PET &#124;&#124; GetPet()->m_spells.size() <= 1 &#124;&#124; creature->GetCreatureTemplate()->trainer_type != TRAINER_TYPE_PETS)</code></pre> |
 | Description |  |
 
 
