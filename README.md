@@ -1,3 +1,7 @@
+---
+## If you are on GitHub this is a mirror, the original repository with the latest updates is at [https://forgejo.neoeden.org/ergo/mod-all-classes-hunter-pet](https://forgejo.neoeden.org/ergo/mod-all-classes-hunter-pet)
+---
+
 ![ACHP](https://forgejo.neoeden.org/ergo/mod-all-classes-hunter-pet/raw/branch/main/ACHP.png)
 
 # Hunter pets for all classes in Azerothcore.
