@@ -1,4 +1,3 @@
----
 ## If you are on GitHub this is a mirror, the original repository with the latest updates is at [https://forgejo.neoeden.org/ergo/mod-all-classes-hunter-pet](https://forgejo.neoeden.org/ergo/mod-all-classes-hunter-pet)
 ---
 
